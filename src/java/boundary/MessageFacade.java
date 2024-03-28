@@ -39,16 +39,13 @@ public class MessageFacade extends AbstractFacade<Message> {
 	public MessageFacade() {
 		super(Message.class);
 	}
-	
-	
-	
+
 //	@Transactional
 	public List<Message> searchByName() {
-		List<Message> messages = em.createQuery("SELECT m.message FROM Message m", Message.class)
-//			.setParameter("msg", "hi")
+		List<Message> messages = em.createQuery("SELECT m.message FROM Message m WHERE m.message=:msg", Message.class)
+			.setParameter("msg", "hi")
 			.getResultList();
 		return messages;
 	}
-	
-	
+
 }

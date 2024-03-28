@@ -19,7 +19,6 @@ import javax.faces.bean.ManagedBean;
  */
 @Named(value = "messageView")
 @Dependent
-@ManagedBean
 public class MessageView {
 
 	@EJB
